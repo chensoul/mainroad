@@ -93,14 +93,14 @@ ignoreLogs = ['warning-goldmark-raw-html']
   # customHeader = ""
   # customFooter = ""
   # customSidebar = ""
-  
+
 [Params.style.vars]
   highlightColor = "#e22d30" # Override highlight color
+
   # Override font-family sets
   # googleFontsLink = "https://fonts.loli.net/css?family=Open+Sans:400,400i,700" # Load Google Fonts
-  googleFontsLink = false
   # Take care of different quotes OR escaping symbols in these params if necessary
-  fontFamilyPrimary = "system-ui, -apple-system, 'Segoe UI', Roboto,'PingFang SC/, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+  fontFamilyPrimary = '"Open Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Helvetica, Arial, sans-serif'
   # Secondary font-family set responsible for pre, code, kbd, and samp tags font
   fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
 
