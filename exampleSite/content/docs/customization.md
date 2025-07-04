@@ -156,9 +156,7 @@ widgets:
 
 Full list of available default widgets:
 
-* `search`, `ddg-search`, `recent`, `categories`, `taglist`, `social`, `languages`
-
-**Note**: DuckDuckGo widget (`ddg-search`) deprecated in favor of `search` widget.
+* `search`, `recent`, `categories`, `taglist`, `social`, `languages`
 
 ---
 
