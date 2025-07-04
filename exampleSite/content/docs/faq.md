@@ -42,20 +42,20 @@ Hugo is not required (but applicable).
 
 * See [All Configuration Settings](https://gohugo.io/getting-started/configuration/#all-configuration-settings)
 for the full list of Hugo-defined variables with their default values.
-* See [Mainroad config.toml example](https://github.com/Vimux/Mainroad#configtoml-example) for the full list of
+* See [Mainroad config.toml example](https://github.com/chensoul/Mainroad#configtoml-example) for the full list of
 Mainroad-specific variables.
 
 **Front Matter:**
 
 * See [Front Matter Variables](https://gohugo.io/content-management/front-matter#front-matter-variables) for the
 list of Hugo-defined Front Matter variables.
-* See [Mainroad Front Matter example](https://github.com/Vimux/Mainroad#front-matter-example) for the list of
+* See [Mainroad Front Matter example](https://github.com/chensoul/Mainroad#front-matter-example) for the list of
 Mainroad-specific Front Matter variables.
 
 ### What if I have more questions? Should I create an issue?
 
 **We don't provide personal technical support.** As stated in our
-[contributing guidelines](https://github.com/Vimux/Mainroad/blob/master/CONTRIBUTING.md), please do not use the issue
+[contributing guidelines](https://github.com/chensoul/Mainroad/blob/master/CONTRIBUTING.md), please do not use the issue
 tracker for personal support. This includes reports like: “How do I do this", “Everything is broken; help me”, “I
 changed something, and it doesn't work anymore”, “It's not a personal issue, but I just want to ask how X or Y works”,
 “I forked your theme, then something broke; fix this immediately”, and so on.

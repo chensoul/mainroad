@@ -74,11 +74,11 @@ ignoreLogs = ['warning-goldmark-raw-html']
   pages="/:slug/"
 
 [Params]
-  author = "ChenSoul"
+  author = "mainroad"
   avatar = "/images/favicon.webp"
-  subtitle = "Java, Spring Boot, Microservice, Cloud, Architecture and DevOps Tutorials" # Logo subtitle
-  description = "Java, Spring Boot, JPA, Hibernate, SQL, REST API, Microservice, Architecture, CI/CD, Docker, Kubernetes, Cloud, and DevOps Tutorials" # Description of your site
-  copyright = "ChenSoul" # Footer copyright holder, otherwise will use site title
+  subtitle = "Just another blog" # Logo subtitle
+  description = "Mainroad's Personal blog about everything" # Description of your site
+  copyright = "mainroad" # Footer copyright holder, otherwise will use site title
   opengraph = true # Enable OpenGraph if true
   schema = true # Enable Schema
   twitter_cards = true # Enable Twitter Cards if true
@@ -190,4 +190,4 @@ Have you found a bug or got an idea for a new feature? Feel free to use the
 
 ## License
 
-This theme is released under the [GPLv2 license](https://github.com/Vimux/mainroad/blob/master/LICENSE.md).
+This theme is released under the [GPLv2 license](https://github.com/chensoul/mainroad/blob/master/LICENSE.md).
