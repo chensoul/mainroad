@@ -5,8 +5,8 @@
 	{{- $valueType := printf "%T" $thumbnail -}}
 	{{- $isMap := in $valueType "map" -}}
 	{{- if $isMap }}
-		{{ $visibility = default (slice "list" "post") (default .page.Site.Params.thumbnail.visibility $thumbnail.visibility) }}
-		{{ $thumbnail = $thumbnail.src }}
+		{{ $visibility = default (slice "list" "post") .page.Site.Params.thumbnail.visibility }}
+		{{ $thumbnail = $thumbnail }}
 	{{- end }}
 
 	{{- if in $visibility $class }}
