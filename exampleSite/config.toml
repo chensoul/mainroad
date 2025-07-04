@@ -32,15 +32,15 @@ ignoreLogs = ['warning-goldmark-raw-html']
   toc = false # Enable Table of Contents
   pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
   post_meta = [ "date", "categories"] # Order of post meta information
-  mainSections = ["posts"] # Specify section pages to show on home page and the "Recent articles" widget
+  mainSections = ["posts", "docs"] # Specify section pages to show on home page and the "Recent articles" widget
   dateformat = "2006-01-02" # Change the format of dates
   mathjax = true # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
-  # customCSS = ["css/custom.css"] # Include custom CSS files
-  # customJS = ["js/custom.js"] # Include custom JS files
-  # googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
-  googleFontsLink = false
+
+  # customHeader = ""
+  # customFooter = ""
+  # customSidebar = ""
 
 [Params.sidebar]
   home = "right"   # Configure layout for home page
@@ -53,3 +53,14 @@ ignoreLogs = ['warning-goldmark-raw-html']
   recent_num = 10 # Set the number of articles in the "Recent articles" widget
   categories_counter = true # Enable counter for each category in "Categories" widget
   tags_counter = true # Enable counter for each tag in "Tags" widget (disabled by default)
+
+[Params.style.vars]
+  highlightColor = "#e22d30" # Override highlight color
+
+  # Override font-family sets
+  # googleFontsLink = "https://fonts.loli.net/css?family=Open+Sans:400,400i,700" # Load Google Fonts
+  googleFontsLink = false
+  # Take care of different quotes OR escaping symbols in these params if necessary
+  fontFamilyPrimary = "system-ui, -apple-system, 'Segoe UI', Roboto,'PingFang SC/, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+  # Secondary font-family set responsible for pre, code, kbd, and samp tags font
+  fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"

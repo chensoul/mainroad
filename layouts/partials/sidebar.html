@@ -28,3 +28,7 @@
 {{- end }}
 </aside>
 {{- end }}
+
+{{ with .Site.Params.customSidebar }}
+  {{ . | safeHTML }}
+{{ end }}

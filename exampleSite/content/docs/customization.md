@@ -358,18 +358,18 @@ might not look as good as our default font.
 Follow the procedure below.
 
 1. Open Google Fonts, choose font(s) that you prefer and copy href font link. For this particular example, we choose
-[Roboto with 3 different styles](https://fonts.google.com/share?selection.family=Roboto:ital,wght@0,400;0,700;1,400;1,700).
+[Roboto with 3 different styles](https://fonts.loli.net/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap).
 Our href font link:
 
     ```
-    https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap
+    https://fonts.loli.net/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap
     ```
 
 1. Set `googleFontsLink` site's config param value to your href font link. For example:
 
     ```toml
     [Params]
-      googleFontsLink = "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+      googleFontsLink = "https://fonts.loli.net/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
     ```
 
 1. Override default font-family set(s):

@@ -10,6 +10,10 @@
 	{{ partial "footer_top.html" . }}
 </footer>
 
+{{ with .Site.Params.customFooter }}
+  {{ . | safeHTML }}
+{{ end }}
+
 {{- partial "mathjax.html" . -}}
 {{- partial "mermaid.html" . -}}
 

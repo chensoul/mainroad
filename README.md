@@ -90,17 +90,17 @@ ignoreLogs = ['warning-goldmark-raw-html']
   mathjax = true # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
-  # customCSS = ["css/custom.css"] # Include custom CSS files
-  # customJS = ["js/custom.js"] # Include custom JS files
-  # googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
-  googleFontsLink = false
-
+  # customHeader = ""
+  # customFooter = ""
+  # customSidebar = ""
+  
 [Params.style.vars]
   highlightColor = "#e22d30" # Override highlight color
-
   # Override font-family sets
+  # googleFontsLink = "https://fonts.loli.net/css?family=Open+Sans:400,400i,700" # Load Google Fonts
+  googleFontsLink = false
   # Take care of different quotes OR escaping symbols in these params if necessary
-  fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
+  fontFamilyPrimary = "system-ui, -apple-system, 'Segoe UI', Roboto,'PingFang SC/, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
   # Secondary font-family set responsible for pre, code, kbd, and samp tags font
   fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
 

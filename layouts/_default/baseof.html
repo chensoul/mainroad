@@ -7,28 +7,32 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
 	{{- if .Site.Params.opengraph }}
-		{{ template "_internal/opengraph.html" . }}
+		<meta property="og:title" content="{{ .Title | default .Site.Title }}">
+		<meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+		<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+		<meta property="og:url" content="{{ .Permalink }}">
+		<meta property="og:site_name" content="{{ .Site.Title }}">
+		<meta property="og:image" content="{{ with .Params.thumbnail }}{{ . }}{{ else }}{{ .Site.Params.ogImage }}{{ end }}">
 	{{- end }}
 	{{- if .Site.Params.schema }}
 		{{ template "_internal/schema.html" . }}
 	{{- end }}
 	{{- if .Site.Params.twitter_cards }}
-		{{ template "_internal/twitter_cards.html" . }}
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="{{ .Title | default .Site.Title }}">
+		<meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+		<meta name="twitter:image" content="{{ with .Params.thumbnail }}{{ . }}{{ else }}{{ .Site.Params.ogImage }}{{ end }}">
 	{{- end }}
 
-	{{- $googleFontsLink := .Site.Params.googleFontsLink | default "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" }}
-	{{- if hasPrefix $googleFontsLink "https://fonts.googleapis.com/" }}
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="dns-prefetch" href="//fonts.googleapis.com">
-	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	{{- $googleFontsLink := .Site.Params.style.vars.googleFontsLink | default "https://fonts.loli.net/css?family=Open+Sans:400,400i,700" }}
+	{{- if hasPrefix $googleFontsLink "https://fonts.loli.net/" }}
+	<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.loli.net">
 	<link rel="stylesheet" {{ printf `href="%s"` $googleFontsLink | safeHTMLAttr }}>
 	{{- end }}
 
 	{{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
-	{{ range .Site.Params.customCSS -}}
-	<link rel="stylesheet" href="{{ . | relURL }}">
-	{{- end }}
 
 	{{- with .OutputFormats.Get "rss" }}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
@@ -44,6 +48,10 @@
 	{{- if not $server }}
 		{{ template "_internal/google_analytics.html" . }}
 	{{- end }}
+
+	{{ with .Site.Params.customHeader }}
+		{{ . | safeHTML }}
+	{{ end }}
 </head>
 <body class="body">
 	<div class="container container--outer">
@@ -64,10 +72,5 @@
 		</div>
 		{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
 	</div>
-{{ range .Site.Params.customJS -}}
-<script src="{{ . | relURL }}"></script>
-{{- end }}
-
-{{ partial "footer_custom.html" . }}
 </body>
 </html>
