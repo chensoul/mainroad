@@ -878,7 +878,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .list__item .content h2 {
-    font-size: 1em;
+	font-size: 1em;
 }
 
 .list__header {

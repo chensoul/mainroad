@@ -1,11 +1,11 @@
 # Mainroad
 
-**Mainroad** is a responsive, simple, clean and content-focused [Hugo](https://gohugo.io/) theme based on the
+**mainroad** is a responsive, simple, clean and content-focused [Hugo](https://gohugo.io/) theme based on the
 [MH Magazine lite](https://wordpress.org/themes/mh-magazine-lite/) theme.
 
-**[Demo](https://mainroad-demo.netlify.app/)** • **[Docs](https://mainroad-demo.netlify.app/docs/)**
+**[Demo](https://blog.chensoul.cc/)**
 
-![screenshot](https://raw.githubusercontent.com/Vimux/Mainroad/master/images/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/chensoul/mainroad/master/images/screenshot.png)
 
 **Features:**
 
@@ -25,19 +25,19 @@
 *Before starting, please be sure that you have
 [installed Hugo](https://gohugo.io/getting-started/quick-start/#step-1-install-hugo) and
 [created a new site](https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site). After that, you are ready
-to install **Mainroad**.*
+to install **mainroad**.*
 
 From your project's root directory, run:
 
 ```
-git clone https://github.com/vimux/mainroad.git themes/mainroad
+git clone https://github.com/chensoul/mainroad.git themes/mainroad
 ```
 
 Or, if you don't plan to make any significant changes but want to track and update the theme, you can add it as a git
 submodule via the following command:
 
 ```
-git submodule add https://github.com/vimux/mainroad.git themes/mainroad
+git submodule add https://github.com/chensoul/mainroad.git themes/mainroad
 ```
 
 Next, open `config.toml` in the base of the Hugo site and ensure the theme option is set to `mainroad`:
@@ -52,46 +52,50 @@ theme = "mainroad"
 
 ```toml
 baseurl = "/"
-title = "Mainroad"
+title = "mainroad"
 languageCode = "en-us"
-paginate = "10" # Number of posts per page
 theme = "mainroad"
-disqusShortname = "" # DEPRECATED! Use .Services.Disqus.Shortname
-googleAnalytics = "" # DEPRECATED! Use .Services.googleAnalytics.ID
+
+summaryLength = 6
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [services.disqus]
   shortname = "" # Enable Disqus by entering your Disqus shortname
 [services.googleAnalytics]
   ID = "" # Enable Google Analytics by entering your tracking ID
 
-[Author] # Used in authorbox
-  name = "John Doe"
-  bio = "John Doe's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
-  avatar = "img/avatar.png"
+[pagination]
+  pagerSize = 10
+
+[permalinks]
+  posts="/posts/:year/:month/:day/:slug/"
+  categories="/categories/:slug/"
+  tags="/tags/:slug/"
+  pages="/:slug/"
 
 [Params]
-  description = "John Doe's Personal blog about everything" # Site description. Used in meta description
-  copyright = "John Doe" # Footer copyright holder, otherwise will use site title
+  author = "ChenSoul"
+  avatar = "/images/favicon.webp"
+  subtitle = "Java, Spring Boot, Microservice, Cloud, Architecture and DevOps Tutorials" # Logo subtitle
+  description = "Java, Spring Boot, JPA, Hibernate, SQL, REST API, Microservice, Architecture, CI/CD, Docker, Kubernetes, Cloud, and DevOps Tutorials" # Description of your site
+  copyright = "ChenSoul" # Footer copyright holder, otherwise will use site title
   opengraph = true # Enable OpenGraph if true
   schema = true # Enable Schema
   twitter_cards = true # Enable Twitter Cards if true
-  readmore = false # Show "Read more" button in list if true
+  readmore = true # Show "Read more" button in list if true
   authorbox = true # Show authorbox at bottom of pages if true
-  toc = true # Enable Table of Contents
+  toc = false # Enable Table of Contents
   pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
-  post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
-  mainSections = ["post", "blog", "news"] # Specify section pages to show on home page and the "Recent articles" widget
+  post_meta = [ "date", "categories"] # Order of post meta information
+  mainSections = ["posts"] # Specify section pages to show on home page and the "Recent articles" widget
   dateformat = "2006-01-02" # Change the format of dates
   mathjax = true # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
-  googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
-  customCSS = ["css/custom.css"] # Include custom CSS files
-  customJS = ["js/custom.js"] # Include custom JS files
-
-  # DEPRECATED PARAMS
-  subtitle = "" # Deprecated in favor of .Site.Params.logo.subtitle
-  highlightColor = "" # Deprecated in favor of .Site.Params.style.vars.highlightColor
+  # customCSS = ["css/custom.css"] # Include custom CSS files
+  # customJS = ["js/custom.js"] # Include custom JS files
+  # googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
+  googleFontsLink = false
 
 [Params.style.vars]
   highlightColor = "#e22d30" # Override highlight color
@@ -102,38 +106,21 @@ googleAnalytics = "" # DEPRECATED! Use .Services.googleAnalytics.ID
   # Secondary font-family set responsible for pre, code, kbd, and samp tags font
   fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
 
-[Params.logo]
-  image = "img/placeholder.png" # Logo image. Path relative to "static"
-  title = "Mainroad" # Logo title, otherwise will use site title
-  subtitle = "Just another site" # Logo subtitle
-
-[Params.thumbnail]
-  visibility = ["list", "post"] # Control thumbnail visibility
-
 [Params.sidebar]
-  home = "right" # Configure layout for home page
-  list = "left"  # Configure layout for list pages
-  single = false # Configure layout for single pages
-  # Enable widgets in given order
-  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+  home = "right"   # Configure layout for home page
+  list = "right"   # Configure layout for list pages
+  single = "right" # Configure layout for single pages
+  # Enable widgets in given order：["search", "recent", "categories", "taglist", "social", "languages"]
+  widgets = [ "search", "recent", "categories", "taglist"]
 
 [Params.widgets]
-  recent_num = 5 # Set the number of articles in the "Recent articles" widget
-  categories_counter = false # Enable counter for each category in "Categories" widget
-  tags_counter = false # Enable counter for each tag in "Tags" widget
+  recent_num = 10 # Set the number of articles in the "Recent articles" widget
+  categories_counter = true # Enable counter for each category in "Categories" widget
+  tags_counter = true # Enable counter for each tag in "Tags" widget (disabled by default)
 
-[Params.widgets.social]
-  cached = false # activate cache if true
-  # Enable parts of social widget
-  facebook = "username"
-  twitter = "username"
-  instagram = "username"
-  linkedin = "username"
-  telegram = "username"
-  github = "username"
-  gitlab = "username"
-  bitbucket = "username"
-  email = "example@example.com"
+[Params.thumbnail]
+  # Control thumbnail visibility, eg: list、post
+  visibility = ["list"]
 
 # Custom social links
 [[Params.widgets.social.custom]]
@@ -197,9 +184,9 @@ For more information about all available standard front matter variables, please
 ## Contributing
 
 Have you found a bug or got an idea for a new feature? Feel free to use the
-[issue tracker](https://github.com/Vimux/mainroad/issues) to let me know. Or make directly a
-[pull request](https://github.com/Vimux/mainroad/pulls), but please respect the following
-[contributing guide](https://github.com/Vimux/mainroad/blob/master/CONTRIBUTING.md).
+[issue tracker](https://github.com/chensoul/mainroad/issues) to let me know. Or make directly a
+[pull request](https://github.com/chensoul/mainroad/pulls), but please respect the following
+[contributing guide](https://github.com/chensoul/mainroad/blob/master/CONTRIBUTING.md).
 
 ## License
 
